@@ -1,4 +1,4 @@
-use crate::types::{MessageContentInitial, MessageId, TimestampMillis, UserId};
+use crate::types::{ChatRole, MessageContentInitial, MessageId, TimestampMillis, UserId};
 use candid::CandidType;
 use serde::{Deserialize, Serialize};
 
@@ -11,6 +11,7 @@ pub struct Command {
     pub name: String,
     pub args: Vec<CommandArg>,
     pub initiator: UserId,
+    pub initiator_role: ChatRole,
     pub meta: Option<CommandMeta>,
 }
 
